@@ -1,0 +1,332 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "02f3aa1e48f93837",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "cocos",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5e1fd121f3e397c0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 500,
+        "wires": [
+            [
+                "233dc9e3698f83e7",
+                "d81d989445f32c45"
+            ]
+        ]
+    },
+    {
+        "id": "233dc9e3698f83e7",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 200,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d3c60be27373156a",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "balise",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"nom\":\"John\",\"sigfox_device\":\"458_uyt\",\"latitude\":44.86,\"longitude\":-0.59,\"altitude\":30}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "564970ef844fe068",
+                "23bf6fca708acf78"
+            ]
+        ]
+    },
+    {
+        "id": "564970ef844fe068",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug inject json",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "23bf6fca708acf78",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "cocos pub",
+        "topic": "cocos",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e1fd121f3e397c0",
+        "x": 570,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d81d989445f32c45",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.122.84/api/wsBalise/add",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "msg",
+                "keyValue": "",
+                "valueType": "other",
+                "valueValue": ""
+            }
+        ],
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "7e7657589044b744"
+            ]
+        ]
+    },
+    {
+        "id": "d3c69d9533740e43",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "reponse webservice cocos",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "7e7657589044b744",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 350,
+        "y": 560,
+        "wires": [
+            [
+                "d3c69d9533740e43"
+            ]
+        ]
+    },
+    {
+        "id": "0bf370e164ef5239",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Envoie d'un message au format json sur le topic cocos",
+        "info": "",
+        "x": 220,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a72c2a9b76287dc0",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Reception des messages du topic cocos et envoie les messages reçus sur le webservice de cocos",
+        "info": "",
+        "x": 360,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ad96ad3750897ca7",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Création de balise via mqtt",
+        "info": "",
+        "x": 130,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fbb481cf85b56a96",
+        "type": "ui_form",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Ajout balise",
+        "group": "a68609dc3b55c2f0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "nom",
+                "value": "nom",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "sigfox_device",
+                "value": "sigfox_device",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "longitude",
+                "value": "longitude",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "latitude",
+                "value": "latitude",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "altitude",
+                "value": "altitude",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "nom": "",
+            "sigfox_device": "",
+            "longitude": "",
+            "latitude": "",
+            "altitude": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 90,
+        "y": 620,
+        "wires": [
+            [
+                "d81d989445f32c45"
+            ]
+        ]
+    },
+    {
+        "id": "5e1fd121f3e397c0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.122.84",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a68609dc3b55c2f0",
+        "type": "ui_group",
+        "name": "balise",
+        "tab": "d5c6b6426cf557a1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d5c6b6426cf557a1",
+        "type": "ui_tab",
+        "name": "Meteofox",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
