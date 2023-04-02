@@ -61,6 +61,6 @@ http://127.0.0.1:8000
 
 ### Crédentials
 
-__Voyager__
-admin@admin.com
-password
+__Voyager__  
+admin@admin.com  
+password  
