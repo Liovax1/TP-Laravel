@@ -427,34 +427,6 @@ INSERT INTO `posts` VALUES (1,0,NULL,'Lorem Ipsum Post',NULL,'This is the excerp
 UNLOCK TABLES;
 
 --
--- Table structure for table `releve_balises`
---
-
-DROP TABLE IF EXISTS `releve_balises`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `releve_balises` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `pression` int(11) DEFAULT NULL,
-  `temperature` int(11) DEFAULT NULL,
-  `balise_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `releve_balises`
---
-
-LOCK TABLES `releve_balises` WRITE;
-/*!40000 ALTER TABLE `releve_balises` DISABLE KEYS */;
-INSERT INTO `releve_balises` VALUES (1,'2023-03-31 14:20:43','2023-03-31 14:20:43',50,20,1),(2,'2023-03-31 14:20:55','2023-03-31 14:20:55',52,22,1),(3,'2023-03-31 14:21:07','2023-03-31 14:21:07',53,23,1);
-/*!40000 ALTER TABLE `releve_balises` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `roles`
 --
 
