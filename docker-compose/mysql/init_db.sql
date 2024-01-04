@@ -16,36 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `balises`
---
-
-DROP TABLE IF EXISTS `balises`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `balises` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) DEFAULT NULL,
-  `sigfox_device` varchar(255) DEFAULT NULL,
-  `altitude` float DEFAULT NULL,
-  `longitude` float DEFAULT NULL,
-  `latitude` float DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `balises`
---
-
-LOCK TABLES `balises` WRITE;
-/*!40000 ALTER TABLE `balises` DISABLE KEYS */;
-INSERT INTO `balises` VALUES (1,'kastler','33400',19,45,-0.5,'2023-01-13 10:17:35','2023-02-24 15:22:47'),(2,'pilat','spez33',10,44.5,-1.72,'2023-01-13 11:02:21','2023-03-02 13:40:26'),(3,'spez','fg78_uy',6,0.04,55.09,'2023-02-24 14:41:38','2023-02-24 14:41:38'),(4,'millau','ert_12',120,45.2,-1.3,'2023-02-24 14:45:55','2023-02-24 15:34:16'),(6,'Cornudère Arbas','arbas_7856',1560,0.89,42.96,'2023-02-26 08:26:44','2023-02-26 08:26:44'),(27,'teste','45789_55',158,0.89,44.33,'2023-03-02 14:45:18','2023-03-02 14:45:18'),(28,'rest_firefox','45789_32',158,0.89,44.33,'2023-03-02 14:46:19','2023-03-02 14:46:19'),(29,'John','458_uyt',30,-0.59,44.86,'2023-03-02 16:28:07','2023-03-02 16:28:07'),(30,'testform','456_yu',589,44.65,0.71,'2023-03-02 16:46:05','2023-03-02 16:46:05'),(31,'qt','qt_45897',1547,-1.87,42.98,'2023-03-02 17:29:38','2023-03-02 17:29:38'),(37,'Balise qt','sfox_qt_7823',458,-0.45,44.52,'2023-03-02 21:37:36','2023-03-02 21:37:36'),(38,'node red mqtt','245h9',458,45.23,0.25,'2023-03-03 07:23:08','2023-03-03 07:23:08'),(39,'Balise lundi','sfox_qt_452',458,-0.45,44.52,'2023-03-06 08:34:39','2023-03-06 08:34:39'),(40,'nodeRed lundi','12dfdf455',456,44.36,0.36,'2023-03-06 08:39:11','2023-03-06 08:39:11'),(41,'node red lundi mqtt','14556454f5drfefdef',4850,45.02,0.87,'2023-03-06 08:40:50','2023-03-06 08:40:50');
-/*!40000 ALTER TABLE `balises` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `categories`
 --
 
