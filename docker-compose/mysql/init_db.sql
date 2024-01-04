@@ -119,7 +119,7 @@ CREATE TABLE `data_types` (
 
 LOCK TABLES `data_types` WRITE;
 /*!40000 ALTER TABLE `data_types` DISABLE KEYS */;
-/*!INSERT INTO `data_types` VALUES (1,'users','users','User','Users','voyager-person','TCG\\Voyager\\Models\\User','TCG\\Voyager\\Policies\\UserPolicy','TCG\\Voyager\\Http\\Controllers\\VoyagerUserController','',1,0,NULL,'2023-01-11 15:03:30','2023-01-11 15:03:30'),(2,'menus','menus','Menu','Menus','voyager-list','TCG\\Voyager\\Models\\Menu',NULL,'','',1,0,NULL,'2023-01-11 15:03:30','2023-01-11 15:03:30'),(3,'roles','roles','Role','Roles','voyager-lock','TCG\\Voyager\\Models\\Role',NULL,'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController','',1,0,NULL,'2023-01-11 15:03:30','2023-01-11 15:03:30'),(5,'posts','posts','Post','Posts','voyager-news','TCG\\Voyager\\Models\\Post','TCG\\Voyager\\Policies\\PostPolicy','','',1,0,NULL,'2023-01-11 15:03:31','2023-01-11 15:03:31'),(6,'pages','pages','Page','Pages','voyager-file-text','TCG\\Voyager\\Models\\Page',NULL,'','',1,0,NULL,'2023-01-11 15:03:31','2023-01-11 15:03:31'),(7,'Balise','balise','Balise','Balises',NULL,'App\\Balise',NULL,NULL,NULL,1,0,'{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}','2023-01-13 09:07:51','2023-01-13 09:07:51'),(14,'balises','balises','Balise','Balises',NULL,'App\\Balise',NULL,NULL,NULL,1,0,'{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}','2023-01-13 10:16:09','2023-01-13 10:16:09'),(15,'releve_balises','releve-balises','Releve Balise','Releve Balises',NULL,'App\\ReleveBalise',NULL,NULL,NULL,1,0,'{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}','2023-03-31 14:03:26','2023-03-31 15:01:09')*/;
+INSERT INTO `data_types` VALUES (1,'users','users','User','Users','voyager-person','TCG\\Voyager\\Models\\User','TCG\\Voyager\\Policies\\UserPolicy','TCG\\Voyager\\Http\\Controllers\\VoyagerUserController','',1,0,NULL,'2023-01-11 15:03:30','2023-01-11 15:03:30'),(2,'menus','menus','Menu','Menus','voyager-list','TCG\\Voyager\\Models\\Menu',NULL,'','',1,0,NULL,'2023-01-11 15:03:30','2023-01-11 15:03:30'),(3,'roles','roles','Role','Roles','voyager-lock','TCG\\Voyager\\Models\\Role',NULL,'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController','',1,0,NULL,'2023-01-11 15:03:30','2023-01-11 15:03:30'),(5,'posts','posts','Post','Posts','voyager-news','TCG\\Voyager\\Models\\Post','TCG\\Voyager\\Policies\\PostPolicy','','',1,0,NULL,'2023-01-11 15:03:31','2023-01-11 15:03:31'),(6,'pages','pages','Page','Pages','voyager-file-text','TCG\\Voyager\\Models\\Page',NULL,'','',1,0,NULL,'2023-01-11 15:03:31','2023-01-11 15:03:31'),(7,'Balise','balise','Balise','Balises',NULL,'App\\Balise',NULL,NULL,NULL,1,0,'{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}','2023-01-13 09:07:51','2023-01-13 09:07:51'),(14,'balises','balises','Balise','Balises',NULL,'App\\Balise',NULL,NULL,NULL,1,0,'{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}','2023-01-13 10:16:09','2023-01-13 10:16:09'),(15,'releve_balises','releve-balises','Releve Balise','Releve Balises',NULL,'App\\ReleveBalise',NULL,NULL,NULL,1,0,'{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}','2023-03-31 14:03:26','2023-03-31 15:01:09');
 /*!40000 ALTER TABLE `data_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,7 +185,7 @@ CREATE TABLE `menu_items` (
 
 LOCK TABLES `menu_items` WRITE;
 /*!40000 ALTER TABLE `menu_items` DISABLE KEYS */;
-/*!INSERT INTO `menu_items` VALUES (1,1,'Dashboard','','_self','voyager-boat',NULL,NULL,1,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.dashboard',NULL),(2,1,'Media','','_self','voyager-images',NULL,NULL,5,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.media.index',NULL),(3,1,'Users','','_self','voyager-person',NULL,NULL,3,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.users.index',NULL),(4,1,'Roles','','_self','voyager-lock',NULL,NULL,2,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.roles.index',NULL),(5,1,'Tools','','_self','voyager-tools',NULL,NULL,9,'2023-01-11 15:03:30','2023-01-11 15:03:30',NULL,NULL),(6,1,'Menu Builder','','_self','voyager-list',NULL,5,10,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.menus.index',NULL),(7,1,'Database','','_self','voyager-data',NULL,5,11,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.database.index',NULL),(8,1,'Compass','','_self','voyager-compass',NULL,5,12,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.compass.index',NULL),(9,1,'BREAD','','_self','voyager-bread',NULL,5,13,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.bread.index',NULL),(10,1,'Settings','','_self','voyager-settings',NULL,NULL,14,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.settings.index',NULL),(12,1,'Posts','','_self','voyager-news',NULL,NULL,6,'2023-01-11 15:03:31','2023-01-11 15:03:31','voyager.posts.index',NULL),(13,1,'Pages','','_self','voyager-file-text',NULL,NULL,7,'2023-01-11 15:03:31','2023-01-11 15:03:31','voyager.pages.index',NULL),(14,1,'Balises','','_self',NULL,NULL,NULL,15,'2023-01-13 09:07:51','2023-01-13 09:07:51','voyager.balise.index',NULL),(21,1,'Balises','','_self',NULL,NULL,NULL,16,'2023-01-13 10:16:09','2023-01-13 10:16:09','voyager.balises.index',NULL),(22,1,'Releve Balises','','_self',NULL,NULL,NULL,17,'2023-03-31 14:03:26','2023-03-31 14:03:26','voyager.releve-balises.index',NULL);
+INSERT INTO `menu_items` VALUES (1,1,'Dashboard','','_self','voyager-boat',NULL,NULL,1,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.dashboard',NULL),(2,1,'Media','','_self','voyager-images',NULL,NULL,5,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.media.index',NULL),(3,1,'Users','','_self','voyager-person',NULL,NULL,3,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.users.index',NULL),(4,1,'Roles','','_self','voyager-lock',NULL,NULL,2,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.roles.index',NULL),(5,1,'Tools','','_self','voyager-tools',NULL,NULL,9,'2023-01-11 15:03:30','2023-01-11 15:03:30',NULL,NULL),(6,1,'Menu Builder','','_self','voyager-list',NULL,5,10,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.menus.index',NULL),(7,1,'Database','','_self','voyager-data',NULL,5,11,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.database.index',NULL),(8,1,'Compass','','_self','voyager-compass',NULL,5,12,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.compass.index',NULL),(9,1,'BREAD','','_self','voyager-bread',NULL,5,13,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.bread.index',NULL),(10,1,'Settings','','_self','voyager-settings',NULL,NULL,14,'2023-01-11 15:03:30','2023-01-11 15:03:30','voyager.settings.index',NULL),(12,1,'Posts','','_self','voyager-news',NULL,NULL,6,'2023-01-11 15:03:31','2023-01-11 15:03:31','voyager.posts.index',NULL),(13,1,'Pages','','_self','voyager-file-text',NULL,NULL,7,'2023-01-11 15:03:31','2023-01-11 15:03:31','voyager.pages.index',NULL),(14,1,'Balises','','_self',NULL,NULL,NULL,15,'2023-01-13 09:07:51','2023-01-13 09:07:51','voyager.balise.index',NULL),(21,1,'Balises','','_self',NULL,NULL,NULL,16,'2023-01-13 10:16:09','2023-01-13 10:16:09','voyager.balises.index',NULL),(22,1,'Releve Balises','','_self',NULL,NULL,NULL,17,'2023-03-31 14:03:26','2023-03-31 14:03:26','voyager.releve-balises.index',NULL);
 /*!40000 ALTER TABLE `menu_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,7 +426,33 @@ INSERT INTO `posts` VALUES (1,0,NULL,'Lorem Ipsum Post',NULL,'This is the excerp
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `releve_balises`
+--
 
+DROP TABLE IF EXISTS `releve_balises`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `releve_balises` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `pression` int(11) DEFAULT NULL,
+  `temperature` int(11) DEFAULT NULL,
+  `balise_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `releve_balises`
+--
+
+LOCK TABLES `releve_balises` WRITE;
+/*!40000 ALTER TABLE `releve_balises` DISABLE KEYS */;
+INSERT INTO `releve_balises` VALUES (1,'2023-03-31 14:20:43','2023-03-31 14:20:43',50,20,1),(2,'2023-03-31 14:20:55','2023-03-31 14:20:55',52,22,1),(3,'2023-03-31 14:21:07','2023-03-31 14:21:07',53,23,1);
+/*!40000 ALTER TABLE `releve_balises` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `roles`
