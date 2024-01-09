@@ -3,8 +3,8 @@ services:
   app:
     build:
       args:
-        user: snir
-        uid: 1000
+        user: lio.hovakimyan
+        uid: 10025
       context: ./
       dockerfile: Dockerfile
     image: laravoyager

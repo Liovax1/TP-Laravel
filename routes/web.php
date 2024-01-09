@@ -22,3 +22,5 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('/aPropos',
+'App\Http\Controllers\pagesController@aPropos')->name('aPropos') ;
