@@ -24,3 +24,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/aPropos',
 'App\Http\Controllers\pagesController@aPropos')->name('aPropos') ;
+
+Route::get('/balises',
+'App\Http\Controllers\pagesBaliseController@balises')->name('balises') ;
+
+Route::get('/balise/{id}', 'App\Http\Controllers\pagesBaliseController@balise')->name('balise');
+
+Route::get('/releveBalise/{id}', 'App\Http\Controllers\pagesBaliseController@releveBalise')->name('releveBalise');
