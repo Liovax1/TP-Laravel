@@ -31,3 +31,11 @@ Route::get('/balises',
 Route::get('/balise/{id}', 'App\Http\Controllers\pagesBaliseController@balise')->name('balise');
 
 Route::get('/releveBalise/{id}', 'App\Http\Controllers\pagesBaliseController@releveBalise')->name('releveBalise');
+
+Route::get('/formAddBalise', 'App\Http\Controllers\pagesBaliseController@create')->name('formAddBalise');
+
+Route::post('/formAddBalise', 'App\Http\Controllers\pagesBaliseController@store')->name('formAddBalise');
+
+Route::get('/formEditBalise/{id}', 'App\Http\Controllers\pagesBaliseController@edit')->name('formEditBalise');
+
+Route::post('/formAddBalise', 'App\Http\Controllers\pagesBaliseController@update')->name('formAddBalise');
