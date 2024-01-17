@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -24,6 +24,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/aPropos',
 'App\Http\Controllers\pagesController@aPropos')->name('aPropos') ;
+
+Route::get('/',
+'App\Http\Controllers\pagesBaliseController@balises')->name('balises') ;
 
 Route::get('/balises',
 'App\Http\Controllers\pagesBaliseController@balises')->name('balises') ;
@@ -38,4 +41,4 @@ Route::post('/formAddBalise', 'App\Http\Controllers\pagesBaliseController@store'
 
 Route::get('/formEditBalise/{id}', 'App\Http\Controllers\pagesBaliseController@edit')->name('formEditBalise');
 
-Route::post('/formAddBalise', 'App\Http\Controllers\pagesBaliseController@update')->name('formAddBalise');
+Route::post('/formEditBalise', 'App\Http\Controllers\pagesBaliseController@update')->name('formEditBalise');

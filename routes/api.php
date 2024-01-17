@@ -18,4 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('/wsBalise/all', 'App\Http\Controllers\baliseController@all');
+Route::get('/wsBalise/show/{id}', 'App\Http\Controllers\baliseController@show');
+Route::get('/wsBalise/delete/{id}', 'App\Http\Controllers\baliseController@delete');
+Route::post('/wsBalise/add','App\Http\Controllers\baliseController@add');
